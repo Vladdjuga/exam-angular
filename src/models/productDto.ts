@@ -7,13 +7,11 @@ export class ProductDto {
     price: number;
     image: string;
     category: categoryDto;
-    tag: tagDto;
     constructor(){
         this.id = 0;
         this.name = "";
         this.price = 0;
         this.image = "";
-        this.tag = new tagDto();
         this.category = new categoryDto();
 
 

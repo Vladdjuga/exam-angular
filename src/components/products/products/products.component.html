@@ -1,43 +1,40 @@
 <table class="table">
   <thead>
     <tr>
-      <th>#</th>
       <th>
-        <mdb-icon fas icon="leaf" class="mr-2 blue-text" aria-hidden="true">Lorem</mdb-icon>
+        <mdb-icon fas icon="leaf" class="mr-2 blue-text" aria-hidden="true">#</mdb-icon>
       </th>
       <th>
-        <mdb-icon fas icon="leaf" class="mr-2 teal-text" aria-hidden="true"></mdb-icon>Ipsum</th>
+        <mdb-icon fas icon="leaf" class="mr-2 teal-text" aria-hidden="true"></mdb-icon>Name
+      </th>
       <th>
-        <mdb-icon fas icon="leaf" class="indigo-text" aria-hidden="true"></mdb-icon>Dolor</th>
+        <mdb-icon fas icon="leaf" class="indigo-text" aria-hidden="true"></mdb-icon>Price
+      </th>
+      <th>
+        <mdb-icon fas icon="leaf" class="indigo-text" aria-hidden="true"></mdb-icon>Image
+      </th>
+      <th>
+        <mdb-icon fas icon="leaf" class="indigo-text" aria-hidden="true"></mdb-icon>Category
+      </th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
+    <tr *ngFor="let product of products">
       <td>
-        <mdb-icon far icon="gem" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 1</td>
+        <mdb-icon far icon="gem" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{product.id}}
+      </td>
       <td>
-        <mdb-icon fas icon="download" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 2</td>
+        <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{product.name}}
+      </td>
       <td>
-        <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 3</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
+        <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{product.price}}
+      </td>
       <td>
-        <mdb-icon icon="graduation-cap" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 4</td>
+        <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{product.image}}
+      </td>
       <td>
-        <mdb-icon fas icon="gift" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 5</td>
-      <td>
-        <mdb-icon fas icon="image" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 6</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>
-        <mdb-icon fas icon="magic" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 7</td>
-      <td>
-        <mdb-icon fas icon="table" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 8</td>
-      <td>
-        <mdb-icon fas icon="edit" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>Cell 9</td>
+        <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{product.category.name}}
+      </td>
     </tr>
   </tbody>
 </table>

@@ -26,5 +26,6 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include":["node_modules/angular-bootstrap-md/**/*.ts","src/**/*.ts"]
 }

@@ -7,9 +7,6 @@ export class ResultDto {
     }
 }
 
-export class ResultCollectionDto{
-    data: Array<any>; 
-    constructor(){
-        this.data = [];
-    }
+export class ResultCollectionDto extends ResultDto{
+    data: Array<any>=[]; 
 }
