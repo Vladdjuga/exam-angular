@@ -1,4 +1,4 @@
-import { categoryDto } from "./categoryDto";
+import { CategoryDto } from "./categoryDto";
 import { tagDto } from "./tagDto";
 
 export class ProductDto { 
@@ -6,13 +6,13 @@ export class ProductDto {
     name: string;
     price: number;
     image: string;
-    category: categoryDto;
+    category: CategoryDto;
     constructor(){
         this.id = 0;
         this.name = "";
         this.price = 0;
         this.image = "";
-        this.category = new categoryDto();
+        this.category = new CategoryDto();
 
 
         

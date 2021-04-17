@@ -14,5 +14,8 @@ constructor(private http:HttpClient) { }
 get():Observable<ResultCollectionDto>{
   return this.http.get<ResultCollectionDto>("https://localhost:44395/api/Product");
 }
+addProduct(product:ProductDto):Observable<ResultDto>{
+  return this.http.post<ResultDto>("https://localhost:44395/api/Product",product);
+}
 
 }

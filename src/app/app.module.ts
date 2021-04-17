@@ -12,12 +12,15 @@ import { ProductsComponent } from 'src/components/products/products/products.com
 import { NavbarComponent } from 'src/components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MDBBootstrapModule} from 'angular-bootstrap-md'
+import { AddProductComponent } from 'src/components/products/add-product/add-product.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md'
     NgxSpinnerModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
