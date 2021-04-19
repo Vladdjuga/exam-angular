@@ -12,12 +12,14 @@ import { ProductsComponent } from 'src/components/products/products/products.com
 import { NavbarComponent } from 'src/components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MDBBootstrapModule} from 'angular-bootstrap-md'
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotifierModule
   ],
   imports: [
     BrowserModule,
