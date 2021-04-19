@@ -1,0 +1,23 @@
+<app-add-category></app-add-category>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <mdb-icon fas icon="leaf" class="mr-2 blue-text" aria-hidden="true">#</mdb-icon>
+      </th>
+      <th>
+        <mdb-icon fas icon="leaf" class="mr-2 teal-text" aria-hidden="true"></mdb-icon>Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>
+        <mdb-icon far icon="gem" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{category.id}}
+      </td>
+      <td>
+        <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{category.name}}
+      </td>
+    </tr>
+  </tbody>
+</table>

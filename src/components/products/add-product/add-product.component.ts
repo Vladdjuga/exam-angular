@@ -34,6 +34,7 @@ export class AddProductComponent implements OnInit {
     this.service.addProduct(this.addProduct).subscribe((res:ResultDto)=>{
       if(res.isSuccess){
         console.log(res);
+        //this.notifier.notify('success', 'You are awesome! I mean it!');
       }
     });
   }

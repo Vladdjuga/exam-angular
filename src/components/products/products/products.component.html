@@ -18,6 +18,9 @@
       <th>
         <mdb-icon fas icon="leaf" class="indigo-text" aria-hidden="true"></mdb-icon>Category
       </th>
+      <th>
+        <mdb-icon fas icon="leaf" class="indigo-text" aria-hidden="true"></mdb-icon>@
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -36,6 +39,9 @@
       </td>
       <td>
         <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{product.category.name}}
+      </td>
+      <td>
+        <mdb-icon fas icon="brain" class="mr-2 grey-text" aria-hidden="true"></mdb-icon><app-update-product [editProduct]="product"></app-update-product>
       </td>
     </tr>
   </tbody>

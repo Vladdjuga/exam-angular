@@ -14,13 +14,19 @@ import { HttpClientModule } from '@angular/common/http';
 import {MDBBootstrapModule} from 'angular-bootstrap-md'
 import { AddProductComponent } from 'src/components/products/add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
+import { AddCategoryComponent } from 'src/components/categories/add-category/add-category.component';
+import { UpdateProductComponent } from 'src/components/products/update-product/update-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     NavbarComponent,
-    AddProductComponent
+    AddProductComponent,
+    CategoriesComponent,
+    AddCategoryComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
