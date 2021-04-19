@@ -8,6 +8,9 @@
       <th>
         <mdb-icon fas icon="leaf" class="mr-2 teal-text" aria-hidden="true"></mdb-icon>Name
       </th>
+      <th>
+        <mdb-icon fas icon="leaf" class="mr-2 teal-text" aria-hidden="true"></mdb-icon>@
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +20,9 @@
       </td>
       <td>
         <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{category.name}}
+      </td>
+      <td>
+        <mdb-icon fas icon="brain" class="mr-2 grey-text" aria-hidden="true"></mdb-icon><app-update-category [editProduct]="category"></app-update-category>
       </td>
     </tr>
   </tbody>
