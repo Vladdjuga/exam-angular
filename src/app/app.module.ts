@@ -18,6 +18,7 @@ import { CategoriesComponent } from 'src/components/categories/categories/catego
 import { AddCategoryComponent } from 'src/components/categories/add-category/add-category.component';
 import { UpdateProductComponent } from 'src/components/products/update-product/update-product.component';
 import { UpdateCategoryComponent } from 'src/components/categories/update-category/update-category.component';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { UpdateCategoryComponent } from 'src/components/categories/update-catego
     BrowserAnimationsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NotifierModule
   ],
   providers: [],
   bootstrap: [AppComponent],
