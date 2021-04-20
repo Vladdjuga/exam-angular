@@ -24,7 +24,7 @@
             <label for="materialContactFormEmail">Price</label>
           </div>
           <label>Category</label>
-          <select [(ngModel)]="nameCategory" name="nameCategory" class="browser-default custom-select mb-4">
+          <select [(ngModel)]="category.name" name="nameCategory" class="browser-default custom-select mb-4">
             <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
           </select>
           <div class="md-form">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ResultCollectionDto } from 'src/models/apiResults/apiResultDto';
 import { ProductDto } from 'src/models/productDto';
 import { ProductsService } from 'src/services/products.service';
@@ -9,9 +10,11 @@ import { ProductsService } from 'src/services/products.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products:Array<ProductDto>=[]
+  products:any;
 
-  constructor(private service:ProductsService) { }
+  constructor(private service:ProductsService) {
+    service.onChanged.subscribe((res)=>this.ngOnInit());
+   }
 
   ngOnInit() {
     this.service.get().subscribe((res:ResultCollectionDto)=>{
@@ -21,5 +24,8 @@ export class ProductsComponent implements OnInit {
       }
     })
   }
+  identify(index:number, item:any) {
+    return item.id;
+ }
 
 }

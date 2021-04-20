@@ -19,6 +19,9 @@ import { AddCategoryComponent } from 'src/components/categories/add-category/add
 import { UpdateProductComponent } from 'src/components/products/update-product/update-product.component';
 import { UpdateCategoryComponent } from 'src/components/categories/update-category/update-category.component';
 import { NotifierModule } from 'angular-notifier';
+import { ClarityModule } from '@clr/angular';
+import '@clr/core/modal/register.js';
+import '@clr/icons';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { NotifierModule } from 'angular-notifier';
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    NotifierModule
+    NotifierModule.withConfig(),
+    ClarityModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

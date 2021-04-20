@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 import { ResultCollectionDto, ResultDto } from 'src/models/apiResults/apiResultDto';
 import { CategoryDto } from 'src/models/categoryDto';
 import { ProductDto } from 'src/models/productDto';
@@ -14,14 +15,16 @@ import { ProductsService } from 'src/services/products.service';
 export class UpdateProductComponent implements OnInit {
 
   @Input() editProduct: ProductDto;
+  @Input() category: CategoryDto;
   categories: Array<CategoryDto> = [];
   nameCategory: string = ''
 
-  constructor(private service: ProductsService, private categoryService: CategoryService, private router: Router) {
+  constructor(private service: ProductsService, private categoryService: CategoryService, private router: Router,private notifierService:NotifierService) {
     categoryService.get().subscribe((res: ResultCollectionDto) => {
       this.categories = res.data
     })
     this.editProduct = new ProductDto();
+    this.category = new CategoryDto();
   }
   ngOnInit() {
   }
@@ -29,7 +32,7 @@ export class UpdateProductComponent implements OnInit {
     this.service.prepareToEdit(this.editProduct.id).subscribe((res: ResultCollectionDto) => {
       if (res.isSuccess) {
         console.log(res);
-        this.nameCategory=this.editProduct.category.name;
+        this.category=this.editProduct.category;
       }
     });
   }
@@ -39,6 +42,7 @@ export class UpdateProductComponent implements OnInit {
     this.service.editProduct(this.editProduct).subscribe((res: ResultDto) => {
       if (res.isSuccess) {
         console.log(res);
+        this.notifierService.notify('success', 'Game updated!');
       }
     });
   }

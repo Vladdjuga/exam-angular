@@ -28,6 +28,7 @@ export class AddProductComponent implements OnInit {
     this.addProduct.category=new CategoryDto();
    }
    ngOnInit() {
+     
   }
   onAdd(){
     this.addProduct.category=this.categories.find(el=>el.id==Number(this.nameCategory)) as CategoryDto;
@@ -35,6 +36,7 @@ export class AddProductComponent implements OnInit {
     this.service.addProduct(this.addProduct).subscribe((res:ResultDto)=>{
       if(res.isSuccess){
         console.log(res);
+        this.service.onChanged.emit(true);
         this.notifierService.notify('success', 'Game added!');
       }
     });
