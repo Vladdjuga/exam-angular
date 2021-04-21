@@ -1,6 +1,5 @@
 <button type="button" mdbBtn color="cyan" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>
   ADD</button>
-
 <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
   aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -19,7 +18,7 @@
             <label for="materialContactFormName">Name</label>
           </div>
           <div class="md-form">
-            <input [(ngModel)]="addProduct.price" name="price" type="number" id="materialContactFormEmail"
+            <input [(ngModel)]="addProduct.price" name="price" min="0" type="number" id="materialContactFormEmail"
               class="form-control" mdbInput>
             <label for="materialContactFormEmail">Price</label>
           </div>

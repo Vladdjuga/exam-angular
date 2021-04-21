@@ -1,6 +1,6 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
   <mdb-navbar-brand><a class="navbar-brand" href="#">
-        <span class="logo-class">Locus</span>
+      <span class="logo-class">Locus</span>
     </a>
   </mdb-navbar-brand>
   <links>
@@ -34,6 +34,16 @@
           <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
           <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/login']">
+          <mdb-icon fas icon="cog"></mdb-icon> Login
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/register']">
+          <mdb-icon fas icon="cog"></mdb-icon> Register
+        </a>
       </li>
     </ul>
   </links>

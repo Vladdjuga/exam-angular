@@ -11,7 +11,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ProductsComponent } from 'src/components/products/products/products.component';
 import { NavbarComponent } from 'src/components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MDBBootstrapModule} from 'angular-bootstrap-md'
+import { MDBBootstrapModule} from 'angular-bootstrap-md'
 import { AddProductComponent } from 'src/components/products/add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
@@ -19,9 +19,8 @@ import { AddCategoryComponent } from 'src/components/categories/add-category/add
 import { UpdateProductComponent } from 'src/components/products/update-product/update-product.component';
 import { UpdateCategoryComponent } from 'src/components/categories/update-category/update-category.component';
 import { NotifierModule } from 'angular-notifier';
-import { ClarityModule } from '@clr/angular';
-import '@clr/core/modal/register.js';
-import '@clr/icons';
+import { MdbModule } from 'mdb-angular-ui-kit';
+import { LoginComponent } from 'src/components/users/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import '@clr/icons';
     CategoriesComponent,
     AddCategoryComponent,
     UpdateProductComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import '@clr/icons';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     NotifierModule.withConfig(),
-    ClarityModule,
+    MdbModule
   ],
   providers: [],
   bootstrap: [AppComponent],

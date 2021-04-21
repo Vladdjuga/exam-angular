@@ -10,3 +10,7 @@ export class ResultDto {
 export class ResultCollectionDto extends ResultDto{
     data: Array<any>=[]; 
 }
+
+export class ResultLoginDto extends ResultDto{
+    token:string='';
+}
