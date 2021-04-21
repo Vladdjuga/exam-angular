@@ -19,7 +19,7 @@ import { NotifierModule } from 'angular-notifier';
     AppComponent,
     ProductsComponent,
     NavbarComponent,
-    NotifierModule
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +27,8 @@ import { NotifierModule } from 'angular-notifier';
     NgbModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
-    HttpClientModule,
+    HttpClientModule,   
+    NotifierModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
