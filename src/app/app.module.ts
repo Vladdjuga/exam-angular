@@ -21,6 +21,7 @@ import { UpdateCategoryComponent } from 'src/components/categories/update-catego
 import { NotifierModule } from 'angular-notifier';
 import { MdbModule } from 'mdb-angular-ui-kit';
 import { LoginComponent } from 'src/components/users/login/login.component';
+import { IsLoggedGuard } from 'src/guards/islogged.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { LoginComponent } from 'src/components/users/login/login.component';
     NotifierModule.withConfig(),
     MdbModule
   ],
-  providers: [],
+  providers: [IsLoggedGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
 })

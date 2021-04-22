@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
 import { ProductsComponent } from 'src/components/products/products/products.component';
 import { LoginComponent } from 'src/components/users/login/login.component';
+import { IsLoggedGuard } from 'src/guards/islogged.guard';
 
 const routes: Routes = [
   {
