@@ -22,6 +22,8 @@ import { NotifierModule } from 'angular-notifier';
 import { MdbModule } from 'mdb-angular-ui-kit';
 import { LoginComponent } from 'src/components/users/login/login.component';
 import { IsLoggedGuard } from 'src/guards/islogged.guard';
+import { ProfileComponent } from 'src/components/users/profile/profile.component';
+import { EditProfileComponent } from 'src/components/users/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,10 @@ import { IsLoggedGuard } from 'src/guards/islogged.guard';
     AddCategoryComponent,
     UpdateProductComponent,
     UpdateCategoryComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    EditProfileComponent
+
   ],
   imports: [
     BrowserModule,
