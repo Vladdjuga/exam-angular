@@ -1,7 +1,7 @@
 <app-add-category></app-add-category>
 <table class="table">
   <thead>
-    <tr>
+    <tr class="table-dark grad-blue">
       <th>
         <mdb-icon fas icon="leaf" class="mr-2 blue-text" aria-hidden="true">#</mdb-icon>
       </th>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let category of categories">
+    <tr *ngFor="let category of categories" class="table-dark">
       <td>
         <mdb-icon far icon="gem" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{category.id}}
       </td>
@@ -22,7 +22,7 @@
         <mdb-icon fas icon="book" class="mr-2 grey-text" aria-hidden="true"></mdb-icon>{{category.name}}
       </td>
       <td>
-        <mdb-icon fas icon="brain" class="mr-2 grey-text" aria-hidden="true"></mdb-icon><app-update-category [editProduct]="category"></app-update-category>
+        <mdb-icon fas icon="brain" class="mr-2 grey-text" aria-hidden="true"></mdb-icon><app-update-category [editCategory]="category"></app-update-category>
       </td>
     </tr>
   </tbody>

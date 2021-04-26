@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark grad-blue" [containerInside]="false">
   <mdb-navbar-brand><a class="navbar-brand" href="#">
       <span class="logo-class">Locus</span>
     </a>
@@ -32,7 +32,7 @@
         </a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
-          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="logOut()">Log out</a>
         </div>
       </li>
       <li *ngIf="!activate.canActivate()" class="nav-item">

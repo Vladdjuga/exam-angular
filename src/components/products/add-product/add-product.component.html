@@ -1,4 +1,4 @@
-<button type="button" mdbBtn color="cyan" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>
+<button type="button" mdbBtn color="info" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>
   ADD</button>
 <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
   aria-labelledby="myBasicModalLabel" aria-hidden="true">
@@ -13,8 +13,8 @@
       <div class="modal-body">
         <form class="text-center" style="color: #757575;">
           <div class="md-form mt-3">
-            <input [(ngModel)]="addProduct.name" name="name" type="text" id="materialContactFormName" class="form-control"
-              mdbInput>
+            <input [(ngModel)]="addProduct.name" name="name" type="text" id="materialContactFormName"
+              class="form-control" mdbInput>
             <label for="materialContactFormName">Name</label>
           </div>
           <div class="md-form">
@@ -31,13 +31,13 @@
               class="form-control" mdbInput>
             <label for="materialContactFormMessage">Image</label>
           </div>
-          <button mdbBtn color="info" [outline]="true" [rounded]="true"
-            class="z-depth-0 my-4 waves-effect" mdbWavesEffect (click)="onAdd()" type="button" (click)="basicModal.hide()">Send</button>
         </form>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
-          (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+        <button mdbBtn color="info" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+          (click)="onAdd()" type="button" (click)="basicModal.hide()">Send</button>
+        <button type="button" [outline]="true" [rounded]="true" mdbBtn color="info" class="waves-light" aria-label="Close" (click)="basicModal.hide()"
+          mdbWavesEffect>Close</button>
       </div>
     </div>
   </div>

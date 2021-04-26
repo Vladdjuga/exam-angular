@@ -1,4 +1,4 @@
-<button type="button" mdbBtn color="cyan" class="relative waves-light" (click)="basicModal.show()"
+<button type="button" mdbBtn color="info" class="relative waves-light" (click)="basicModal.show()"
   (click)="onPrepareToEdit(editProduct.id)" mdbWavesEffect>
   EDIT</button>
 
@@ -33,12 +33,12 @@
               class="form-control" mdbInput>
             <label for="materialContactFormMessage">Image</label>
           </div>
-          <button mdbBtn color="info" [outline]="true" [rounded]="true" class="z-depth-0 my-4 waves-effect"
-            mdbWavesEffect (click)="onAdd()" type="button" (click)="basicModal.hide()">Send</button>
         </form>
       </div>
       <div class="modal-footer justify-content-center">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+        <button mdbBtn color="info" class="z-depth-0 my-4 waves-effect"
+          mdbWavesEffect (click)="onAdd()" type="button" (click)="basicModal.hide()">Send</button>
+        <button type="button" [outline]="true" [rounded]="true" mdbBtn color="secondary" class="waves-light" aria-label="Close"
           (click)="basicModal.hide()" mdbWavesEffect>Close</button>
       </div>
     </div>

@@ -10,8 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ProductsComponent } from 'src/components/products/products/products.component';
 import { NavbarComponent } from 'src/components/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
-import { MDBBootstrapModule} from 'angular-bootstrap-md'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MDBBootstrapModule } from 'angular-bootstrap-md'
 import { AddProductComponent } from 'src/components/products/add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
@@ -22,6 +22,7 @@ import { NotifierModule } from 'angular-notifier';
 import { MdbModule } from 'mdb-angular-ui-kit';
 import { LoginComponent } from 'src/components/users/login/login.component';
 import { IsLoggedGuard } from 'src/guards/islogged.guard';
+import { TokenInterceptor } from 'src/helpers/interceptor';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,13 @@ import { IsLoggedGuard } from 'src/guards/islogged.guard';
     NotifierModule.withConfig(),
     MdbModule
   ],
-  providers: [IsLoggedGuard],
+  providers: [IsLoggedGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppModule { }

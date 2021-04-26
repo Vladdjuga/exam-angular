@@ -1,1 +1,8 @@
 @import 'angular-notifier/styles.css';
+.grad-blue{
+    background: rgb(0,198,255);
+    background: -moz-linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(114,230,255,1) 69%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(114,230,255,1) 69%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(114,230,255,1) 69%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00c6ff",endColorstr="#00d4ff",GradientType=1);
+}
