@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
 import { ProductsComponent } from 'src/components/products/products/products.component';
+import { EditProfileComponent } from 'src/components/users/edit-profile/edit-profile.component';
 import { LoginComponent } from 'src/components/users/login/login.component';
+import { ProfileComponent } from 'src/components/users/profile/profile.component';
 import { IsLoggedGuard } from 'src/guards/islogged.guard';
 
 const routes: Routes = [
@@ -33,7 +35,15 @@ const routes: Routes = [
   //{
   //  path:"register",
   //  component:Register
-  //}
+  //},
+  {
+    path:"profile",
+    component:ProfileComponent
+  },
+  {
+    path:"edit-profile",
+    component:EditProfileComponent
+  },
 ];
 
 @NgModule({

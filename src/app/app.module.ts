@@ -23,6 +23,8 @@ import { MdbModule } from 'mdb-angular-ui-kit';
 import { LoginComponent } from 'src/components/users/login/login.component';
 import { IsLoggedGuard } from 'src/guards/islogged.guard';
 import { TokenInterceptor } from 'src/helpers/interceptor';
+import { ProfileComponent } from 'src/components/users/profile/profile.component';
+import { EditProfileComponent } from 'src/components/users/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { TokenInterceptor } from 'src/helpers/interceptor';
     AddCategoryComponent,
     UpdateProductComponent,
     UpdateCategoryComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    EditProfileComponent
+
   ],
   imports: [
     BrowserModule,
