@@ -1,4 +1,4 @@
-export class MessageDto { 
+export class PostDto { 
     id: string;
     text: string;
     image: string;

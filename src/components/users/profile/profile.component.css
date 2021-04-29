@@ -1,21 +1,19 @@
      	  
     .pic
     {
-         margin-top:50px; 
-         width:120px;
-         margin-left:50px;
-         margin-bottom:-60px;
+        object-fit: contain;
+        max-width:24%;
     }
     
     .panel
     {
-        background-image:url("https://via.placeholder.com/800x100/FFB6C1/000000"); 
+        padding: 1% 5%;
+        background: rgb(48, 48, 48);
+        margin-bottom: 1%;
     }
     
     .name
     {
-        position:absolute;
-        padding-left:200px;
         font-size:30px;
     }
     
@@ -41,8 +39,7 @@
      color:white;
     }                  
 .mt-10{
-    margin-top: 5%;
-    font-size: small;
+    top: 1vh;
 }
 .vertical-ul>*{
     display: inline;

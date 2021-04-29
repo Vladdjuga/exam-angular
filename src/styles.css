@@ -1,13 +1,13 @@
 @import 'angular-notifier/styles.css';
 .grad-blue{
-    background: rgb(0,198,255);
-    background: -moz-linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(114,230,255,1) 69%, rgba(0,212,255,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(114,230,255,1) 69%, rgba(0,212,255,1) 100%);
-    background: linear-gradient(90deg, rgba(0,198,255,1) 0%, rgba(114,230,255,1) 69%, rgba(0,212,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00c6ff",endColorstr="#00d4ff",GradientType=1);
+    background: rgb(255,70,70);
+    background: -moz-linear-gradient(90deg, rgba(255,70,70,1) 0%, rgba(255,98,98,1) 48%, rgba(255,70,70,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,70,70,1) 0%, rgba(255,98,98,1) 48%, rgba(255,70,70,1) 100%);
+    background: linear-gradient(90deg, rgba(255,70,70,1) 0%, rgba(255,98,98,1) 48%, rgba(255,70,70,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4646",endColorstr="#ff4646",GradientType=1);
 }
 .form-a>a{
-    color: cyan !important;
+    color: rgb(231, 106, 127) !important;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

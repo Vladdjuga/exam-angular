@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RegisterDto,LoginDto } from 'src/models/accountDtos';
-import { ResultDto,ResultLoginDto } from 'src/models/apiResults/apiResultDto';
+import { ResultCollectionDto, ResultDto,ResultLoginDto } from 'src/models/apiResults/apiResultDto';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,9 @@ register(model:RegisterDto):Observable<ResultDto>{
 }
 login(model:LoginDto):Observable<ResultLoginDto>{
   return this.http.post<ResultLoginDto>('https://localhost:44395/api/Account/login',model);
+}
+getProfile(token:string):Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Account/profile/'+token);
 }
 
 }

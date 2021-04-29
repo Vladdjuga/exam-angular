@@ -17,3 +17,13 @@ export class LoginDto{
     username:string='';
     password:string='';
 }
+export class ProfileDto{
+    //public string Email { get; set; }
+    //public string Password { get; set; }
+
+    username:string='';
+    alias:string='';
+    email:string='';
+    image:string='';
+    birth:Date=new Date();
+}
