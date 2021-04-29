@@ -62,6 +62,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 @NgModule({
   declarations: [
@@ -128,7 +129,8 @@ import {OverlayModule} from '@angular/cdk/overlay';
     MatTableModule,
     MatTabsModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    MaterialFileInputModule
   ],
   providers: [IsLoggedGuard,
     {

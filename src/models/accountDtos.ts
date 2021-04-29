@@ -8,6 +8,7 @@ export class RegisterDto{
     alias:string='';
     email:string='';
     password:string='';
+    image:string='';
     birth:Date=new Date();
 }
 export class LoginDto{

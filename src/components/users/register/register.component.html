@@ -1,36 +1,70 @@
+<form class="text-center form-pd text-light" enctype="multipart/form-data">
 
-  <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+  <p class="h4 mb-4">Sign up</p>
+
+  <mat-form-field>
+    <ngx-mat-file-input [(ngModel)]="files_" type="file" name="file" formControlName="requiredfile" placeholder="Upload your profile picture" valuePlaceholder="No file selected" (change)="photoChange($any(target($event).files))"></ngx-mat-file-input>
+    <mat-icon matSuffix>folder</mat-icon>
+    <mat-error *ngIf="formDoc.hasError('required')">
+      Please select a file
+    </mat-error>
+    <mat-error *ngIf="formDoc.hasError('maxContentSize')">
+      The total size must not exceed {{formDoc.get('requiredfile')?.getError('maxContentSize').maxSize | byteFormat}} ({{formDoc.get('requiredfile')?.getError('maxContentSize').actualSize
+      | byteFormat}}).
+    </mat-error>
+  </mat-form-field>
+  
+  <div class="form-row mb-4">
+    <div class="col">
+      <div class="example-container">
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter your username</mat-label>
+          <input [(ngModel)]="user.username" type="text" matInput placeholder="Username" [formControl]="username" required>
+          <mat-error *ngIf="username.invalid">{{getErrorMessage2()}}</mat-error>
         </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-      <form [formGroup]="secondFormGroup">
-        <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
-    </mat-step>
-  </mat-horizontal-stepper>
+    </div>
+    <div class="col">
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your alias</mat-label>
+        <input [(ngModel)]="user.alias" type="text" matInput placeholder="Alias" [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getErrorMessage2()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="example-container">
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter your email</mat-label>
+      <input [(ngModel)]="user.email" type="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage1()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="example-container">
+    <mat-form-field class="example-full-width">
+    <mat-label>Enter your password</mat-label>
+    <input [(ngModel)]="user.password" type="password" matInput placeholder="***" [formControl]="password" required>
+    <mat-error *ngIf="password.invalid">{{getErrorMessage3()}}</mat-error>
+  </mat-form-field>
+</div>
+  
+  <div class="example-container">
+    <mat-form-field class="example-full-width">
+    <mat-label>Re-enter your password</mat-label>
+    <input [(ngModel)]="re_enter_pass" type="password" matInput placeholder="***" [formControl]="password" required>
+    <mat-error *ngIf="password.invalid">{{getErrorMessage3()}}</mat-error>
+  </mat-form-field>
+</div>
+  <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+    At least 8 characters and 1 digit
+  </small>
+  <mat-form-field class="example-full-width" class="example-full-width">
+    <mat-label>Birthday</mat-label>
+    <input [(ngModel)]="user.birth" (dateInput)="addEvent('input', $event)" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker></mat-datepicker>
+  </mat-form-field>
+  <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+    Enter your birthday
+  </small>
+  <button mdbBtn color="red" [block]="true" class="my-4" type="submit" (click)="signIn()">Sign up</button>
+</form>

@@ -1,3 +1,7 @@
 .form-pd{
     padding: 10% 25% ;
 }
+.none-border{
+    border:none !important;
+    border-bottom: 1px solid gray !important;
+}
