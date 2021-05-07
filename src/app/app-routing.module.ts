@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
+import { ChatComponent } from 'src/components/chat/chat.component';
 import { ProductsComponent } from 'src/components/products/products/products.component';
 import { EditProfileComponent } from 'src/components/users/edit-profile/edit-profile.component';
 import { LoginComponent } from 'src/components/users/login/login.component';
@@ -46,7 +47,11 @@ const routes: Routes = [
         component:EditProfileComponent
       }
     ]
-  }
+  },
+  {
+    path:"chat",
+    component:ChatComponent
+  },
 ];
 
 @NgModule({

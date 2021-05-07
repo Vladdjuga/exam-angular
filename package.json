@@ -45,6 +45,7 @@
     "mdb-angular-ui-kit": "^1.0.0-beta3",
     "mdb-ui-kit": "^3.5.0",
     "mdbootstrap": "^4.19.2",
+    "ng-chat": "^3.0.3",
     "ng-uikit": "^0.1.6",
     "ngx-material-file-input": "^2.1.1",
     "ngx-spinner": "^11.0.1",

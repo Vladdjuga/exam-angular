@@ -63,6 +63,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { NgChatModule } from 'ng-chat';
 
 @NgModule({
   declarations: [
@@ -130,7 +131,8 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     MatTabsModule,
     MatTooltipModule,
     MatTreeModule,
-    MaterialFileInputModule
+    MaterialFileInputModule,
+    NgChatModule
   ],
   providers: [IsLoggedGuard,
     {
