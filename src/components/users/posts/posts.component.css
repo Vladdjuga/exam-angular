@@ -1,0 +1,46 @@
+
+.panel
+{
+    background: rgb(48, 48, 48);
+    margin-bottom: 3%;
+}
+
+.img-circle{
+    height: 40%;
+    display: flex;
+}
+.margin-top{
+    margin-top: 5vh;
+}
+.who-posted-div{
+    background-color: rgba(8, 8, 8, 0.486);
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.space{
+    display: flex;
+    justify-content: center;
+    padding: 3vh 0;
+}
+.img-circle-sm{
+    object-fit: cover;
+    width:3vh;
+    height:3vh;
+    border-radius: 50%;
+    margin-left: 0.7vh;
+}
+.text{
+    overflow-wrap:break-word;
+    background-color: rgba(41, 41, 41, 0.562);
+    padding: 1vh 2vh;
+}
+.font-w{
+    font-size: 10pt;
+    color: rgba(128, 128, 128, 0.541);
+}
+.text-alignment{
+    text-align: right;
+}

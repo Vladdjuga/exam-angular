@@ -1,10 +1,12 @@
 <div class="text-light">
   <div class="panel grad-blue row">
     <div class="col-lg-6 row">
-      <img class="pic img-circle col-lg-6" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="...">
-      <form>
+      <div class="col-lg-6">
+        <img class="pic-md img-circle" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="...">
+      </div>
+      <form [formGroup]="formDoc">
         <mat-form-field>
-          <ngx-mat-file-input [(ngModel)]="files_" type="file" name="file" formControlName="requiredfile"
+          <ngx-mat-file-input [(ngModel)]="files_" type="file" name="file"
             placeholder="Upload your profile picture" valuePlaceholder="No file selected"
             (change)="photoChange($any(target($event).files))"></ngx-mat-file-input>
           <mat-icon matSuffix>folder</mat-icon>
@@ -28,9 +30,21 @@
 
   </div>
   <mat-tab-group>
-    <mat-tab label="Posts"> Content 1 </mat-tab>
-    <mat-tab label="Friends"> Content 2 </mat-tab>
-    <mat-tab label="Settings"> Content 3 </mat-tab>
+    <mat-tab label="Posts">
+      <app-posts [profile]="profile"></app-posts>
+    </mat-tab>
+    <mat-tab label="Friends">
+      <app-friends [profile]="profile"></app-friends>
+    </mat-tab>
+    <mat-tab label="Invites">
+      <mat-list>
+        <mat-list-item *ngFor="let invite of invites" class="panel">
+          <img class="img-circle-sm mr-2" src="https://localhost:44395/Images/UsersIcons/{{invite.image}}" alt="...">
+          {{invite.username}}
+          <button (click)="accept(invite.username)" mat-flat-button color="warn" class="float-right">Accept</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
   </mat-tab-group>
 
 

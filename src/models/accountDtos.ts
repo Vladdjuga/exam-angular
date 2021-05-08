@@ -28,3 +28,12 @@ export class ProfileDto{
     image:string='';
     birth:Date=new Date();
 }
+export class FriendDto{
+    //public string Email { get; set; }
+    //public string Password { get; set; }
+
+    username:string='';
+    alias:string='';
+    image:string='';
+    birth:Date=new Date();
+}

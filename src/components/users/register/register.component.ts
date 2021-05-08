@@ -18,7 +18,6 @@ import { FileValidator } from 'ngx-material-file-input';
 export class RegisterComponent implements OnInit {
 
   user: RegisterDto = new RegisterDto();
-  isLinear = true;
   re_enter_pass = "";
   firstFormGroup: FormGroup = new FormGroup({}, [], []);
   secondFormGroup: FormGroup = new FormGroup({}, [], []);
@@ -63,8 +62,8 @@ export class RegisterComponent implements OnInit {
     if (files.item && files.item(0)) {
       this.formData.append('file', files.item(0) as File);
       this.service.uploadPhoto(id, this.formData).subscribe((res: any) => {
-        if (res.isSuccessful) {
-          this.ngOnInit();
+        if (res.isSuccess) {
+          //this.ngOnInit();
         }
       })
     }

@@ -1,9 +1,10 @@
 export class PostDto { 
-    id: string;
+    id: number;
     text: string;
     image: string;
+    date=new Date();
     constructor(){
-        this.id = "";
+        this.id = 0;
         this.text = "";
         this.image = "";
     }

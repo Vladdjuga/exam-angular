@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RegisterDto,LoginDto } from 'src/models/accountDtos';
 import { ResultCollectionDto, ResultDto,ResultLoginDto } from 'src/models/apiResults/apiResultDto';
+import { InviteDto } from 'src/models/inviteDto';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class AccountService {
 
 constructor(private http:HttpClient) { }
 
+onChanged = new EventEmitter<boolean>();
 headers:HttpHeaders=new HttpHeaders();
 
 register(model:RegisterDto):Observable<ResultLoginDto>{
@@ -26,5 +28,21 @@ uploadPhoto(id:string,file: FormData):Observable<ResultDto>{
   this.headers.append('Content-Type',"multipart/form-data");
   return this.http.post<ResultDto>('https://localhost:44395/api/Account/uploadPhoto/'+id,file,{headers:this.headers});
 }
+getStringFriends(token:string,str:string):Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/find-friends/'+token+'&'+str);
+}
+invite(invite:InviteDto):Observable<ResultDto>{
+  return this.http.post<ResultDto>('https://localhost:44395/api/Friend/invite',invite);
+}
+accept(invite:InviteDto):Observable<ResultDto>{
+  return this.http.post<ResultDto>('https://localhost:44395/api/Friend/inviteaccept',invite);
+}
+getInvites(token:string):Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/getinvites/'+token);
+}
+getFriends(token:string):Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/friends/'+token);
+}
+
 
 }

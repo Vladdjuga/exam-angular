@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   password = new FormControl('', [Validators.required, Validators.maxLength(18), Validators.minLength(8)]);
   
   ngOnInit() {
+    
   }  
   getErrorMessage2() {
     if (this.username.hasError('required')) {

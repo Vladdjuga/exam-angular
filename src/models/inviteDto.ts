@@ -1,10 +1,12 @@
+import { FriendDto } from "./accountDtos";
+
 export class InviteDto { 
     id: number;
-    user1: string;
-    user2: string;
+    friend1: FriendDto;
+    friend2: FriendDto;
     constructor(){
         this.id = 0;
-        this.user1 = "";
-        this.user2 = "";
+        this.friend1 = new FriendDto();
+        this.friend2 = new FriendDto();
     }
 }

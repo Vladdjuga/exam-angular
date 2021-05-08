@@ -63,6 +63,11 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { FindFriendsComponent } from 'src/components/users/find-friends/find-friends.component';
+import { FriendsComponent } from 'src/components/users/friends/friends.component';
+import { PostsComponent } from 'src/components/users/posts/posts.component';
+import { AddPostComponent } from 'src/components/users/posts/add-post/add-post.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -77,7 +82,11 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
     LoginComponent,
     ProfileComponent,
     EditProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    FindFriendsComponent,
+    FriendsComponent,
+    PostsComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
@@ -137,7 +146,9 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }],
+    },
+    DatePipe
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

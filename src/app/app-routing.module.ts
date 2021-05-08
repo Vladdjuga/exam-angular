@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
 import { ProductsComponent } from 'src/components/products/products/products.component';
 import { EditProfileComponent } from 'src/components/users/edit-profile/edit-profile.component';
+import { FindFriendsComponent } from 'src/components/users/find-friends/find-friends.component';
 import { LoginComponent } from 'src/components/users/login/login.component';
 import { ProfileComponent } from 'src/components/users/profile/profile.component';
 import { RegisterComponent } from 'src/components/users/register/register.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:"register",
     component:RegisterComponent
+  },
+  {
+    path:"find-friends",
+    component:FindFriendsComponent
   },
   {
     path:"profile",
