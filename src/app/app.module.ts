@@ -68,6 +68,7 @@ import { FriendsComponent } from 'src/components/users/friends/friends.component
 import { PostsComponent } from 'src/components/users/posts/posts.component';
 import { AddPostComponent } from 'src/components/users/posts/add-post/add-post.component';
 import { DatePipe } from '@angular/common';
+import { ChatComponent } from 'src/components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { DatePipe } from '@angular/common';
     FindFriendsComponent,
     FriendsComponent,
     PostsComponent,
-    AddPostComponent
+    AddPostComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

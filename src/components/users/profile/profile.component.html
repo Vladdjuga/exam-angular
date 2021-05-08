@@ -37,7 +37,7 @@
       <app-friends [profile]="profile"></app-friends>
     </mat-tab>
     <mat-tab label="Invites">
-      <mat-list>
+      <mat-list class="container">
         <mat-list-item *ngFor="let invite of invites" class="panel">
           <img class="img-circle-sm mr-2" src="https://localhost:44395/Images/UsersIcons/{{invite.image}}" alt="...">
           {{invite.username}}

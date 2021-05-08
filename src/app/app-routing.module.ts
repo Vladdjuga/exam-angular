@@ -44,6 +44,10 @@ const routes: Routes = [
     component:FindFriendsComponent
   },
   {
+    path:"chat",
+    component:ChatComponent
+  },
+  {
     path:"profile",
     component:ProfileComponent,
     children:[
