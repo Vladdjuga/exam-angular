@@ -50,12 +50,10 @@ const routes: Routes = [
   {
     path:"profile",
     component:ProfileComponent,
-    children:[
-      {
-        path:"edit-profile",
-        component:EditProfileComponent
-      }
-    ]
+  },
+  {
+    path:"edit-profile",
+    component:EditProfileComponent
   },
   {
     path:"chat",

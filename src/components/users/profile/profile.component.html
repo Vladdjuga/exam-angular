@@ -1,10 +1,14 @@
 <div class="text-light">
+
   <div class="panel grad-blue row">
+    
     <div class="col-lg-6 row">
+      
       <div class="col-lg-6">
         <img class="pic-md img-circle" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="...">
       </div>
-      <form [formGroup]="formDoc">
+      
+      <!--<form [formGroup]="formDoc">
         <mat-form-field>
           <ngx-mat-file-input [(ngModel)]="files_" type="file" name="file"
             placeholder="Upload your profile picture" valuePlaceholder="No file selected"
@@ -20,15 +24,17 @@
           </mat-error>
         </mat-form-field>
         <button mdbBtn color="red" [block]="true" class="my-4" type="submit" (click)="changePic()">Submit</button>
-      </form>
+      </form>-->
+      
       <div class="name col-lg-6">
         <small>{{profile.username}}</small>
         <br>
         <small class="small-text">{{profile.alias}}</small>
       </div>
     </div>
-
+    <button mat-flat-button color="warn" class="btnedits" [routerLink]="['../edit-profile']">Edit Profile</button>
   </div>
+ 
   <mat-tab-group>
     <mat-tab label="Posts">
       <app-posts [profile]="profile"></app-posts>

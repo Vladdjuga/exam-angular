@@ -1,4 +1,6 @@
-body{
-    margin-top:20px;
-    background:#f8f8f8
+.bg{
+    background-color: rgba(49, 49, 49, 0.5);
+}
+.dbg{
+    border-radius: 50% !important;
 }
