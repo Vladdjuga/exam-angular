@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { FriendDto, ProfileDto } from 'src/models/accountDtos';
-import { ResultCollectionDto } from 'src/models/apiResults/apiResultDto';
+import { ResultCollectionDto, ResultDto } from 'src/models/apiResults/apiResultDto';
 import { AccountService } from 'src/services/account.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class FriendsComponent implements OnInit {
   friend_list: Array<FriendDto> = [];
   @Input() profile = new ProfileDto();
   
-  constructor(private service: AccountService,private notify:NotifierService) { 
+  constructor(private service: AccountService,private notifier:NotifierService,private router:Router) { 
     service.onChanged.subscribe((res)=>this.ngOnInit());
   }
 
@@ -23,6 +24,14 @@ export class FriendsComponent implements OnInit {
       if (res.isSuccess) {
         //this.service.onChanged.emit(true);
         this.friend_list = res.data
+      }
+    })
+  }
+  addChat(friend:string){
+    this.service.addChat(localStorage.getItem('token') as string,friend).subscribe((res:ResultDto)=>{
+      if(res.isSuccess){
+        this.notifier.notify('success',res.message);
+        this.router.navigate(['chat']);
       }
     })
   }
