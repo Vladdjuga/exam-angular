@@ -14,9 +14,9 @@
               <div class="chat_img"> <img class="img-rd"
                   src="https://localhost:44395/Images/UsersIcons/{{chat.user2.image}}" alt="sunil"> </div>
               <div class="chat_ib">
-                <h5>{{chat.user2.username}} <span
+                <h5>{{chat.user2.username}} <span *ngIf="chat.messages[chat.messages.length-1]!=undefined"
                     class="chat_date">{{getCorrectTime(chat.messages[chat.messages.length-1].date)}}</span></h5>
-                <p>{{chat.messages[chat.messages.length-1].text}}</p>
+                <p *ngIf="chat.messages[chat.messages.length-1]!=undefined">{{chat.messages[chat.messages.length-1].text}}</p>
               </div>
             </div>
           </div>
@@ -54,8 +54,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div *ngFor="let message of current_messages">
             <div *ngIf="message.user.username==profile.username" class="outgoing_msg">
               <div class="sent_msg">
                 <p>{{message.text}}</p>
@@ -64,7 +62,8 @@
             </div>
           </div>
         </div>
-        <div class="type_msg">
+        <div *ngIf="current_chat.user1!=undefined">
+        <div *ngIf="current_chat.user1.username!=''" class="type_msg">
           <div class="input_msg_write">
             <form>
               <input [(ngModel)]="message.text" name="text" type="text" class="write_msg" placeholder="Type a message" />
@@ -72,6 +71,7 @@
                   class="fas fa-paper-plane"></i></button>
             </form>
           </div>
+        </div>
         </div>
       </div>
     </div>

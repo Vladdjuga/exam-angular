@@ -33,15 +33,18 @@ export class AddPostComponent implements OnInit {
     }
     this.service.addPost(this.addPost, localStorage.getItem('token') as string).subscribe((res: ResultDto) => {
       if (res.isSuccess) {
+
         this.notifier.notify('success', "Posted!")
         if (this.files_ != null) {
           this.uploadPhoto(this.files_, res.message);
         }
         else{
+          this.addPost=new PostDto();
+          this.files_=null;
+          this.file=new File([],'',undefined);
+          this.formData=new FormData();
           this.service.onChanged.emit(true);
         }
-        this.addPost=new PostDto();
-        this.files_=null;
       }
       else {
         this.notifier.notify('error', res.message)
