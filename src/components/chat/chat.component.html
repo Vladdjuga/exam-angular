@@ -49,14 +49,14 @@
               </div>
               <div class="received_msg">
                 <div class="received_withd_msg">
-                  <p>{{message.text}}</p>
+                  <p class="message-txt">{{message.text}}</p>
                   <span class="time_date">{{getCorrectDate(message.date)}}</span>
                 </div>
               </div>
             </div>
             <div *ngIf="message.user.username==profile.username" class="outgoing_msg">
               <div class="sent_msg">
-                <p>{{message.text}}</p>
+                <p class="message-txt">{{message.text}}</p>
                 <span class="time_date">{{getCorrectDate(message.date)}}</span>
               </div>
             </div>

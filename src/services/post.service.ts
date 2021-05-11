@@ -17,6 +17,12 @@ export class PostService {
   get(token:string):Observable<ResultCollectionDto>{
     return this.http.get<ResultCollectionDto>("https://localhost:44395/api/Post/getuserposts/"+token);
   }
+  getUsername(username:string):Observable<ResultCollectionDto>{
+    return this.http.get<ResultCollectionDto>("https://localhost:44395/api/Post/getfriendsposts/"+username);
+  }
+  getNewest(token:string):Observable<ResultCollectionDto>{
+    return this.http.get<ResultCollectionDto>("https://localhost:44395/api/Post/getnewestposts/"+token);
+  }
   addPost(model: PostDto, token: string): Observable<ResultDto> {
     return this.http.post<ResultDto>('https://localhost:44395/api/Post/add-post/'+token, model);
   }

@@ -69,6 +69,10 @@ import { PostsComponent } from 'src/components/users/posts/posts.component';
 import { AddPostComponent } from 'src/components/users/posts/add-post/add-post.component';
 import { DatePipe } from '@angular/common';
 import { ChatComponent } from 'src/components/chat/chat.component';
+import { HomeComponent } from 'src/components/home/home.component';
+import { FriendProfileComponent } from 'src/components/users/friends/friend-profile/friend-profile.component';
+import { FriendPostsComponent } from 'src/components/users/friends/friend-profile/friend-posts/friend-posts.component';
+import { FriendFriendsComponent } from 'src/components/users/friends/friend-profile/friend-friends/friend-friends.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +92,11 @@ import { ChatComponent } from 'src/components/chat/chat.component';
     FriendsComponent,
     PostsComponent,
     AddPostComponent,
-    ChatComponent
+    ChatComponent,
+    HomeComponent,
+    FriendProfileComponent,
+    FriendPostsComponent,
+    FriendFriendsComponent
   ],
   imports: [
     BrowserModule,

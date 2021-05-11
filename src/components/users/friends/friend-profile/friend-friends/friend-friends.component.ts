@@ -1,26 +1,35 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { FriendDto, ProfileDto } from 'src/models/accountDtos';
 import { ResultCollectionDto, ResultDto } from 'src/models/apiResults/apiResultDto';
 import { AccountService } from 'src/services/account.service';
 
 @Component({
-  selector: 'app-friends',
-  templateUrl: './friends.component.html',
-  styleUrls: ['./friends.component.css']
+  selector: 'app-friend-friends',
+  templateUrl: './friend-friends.component.html',
+  styleUrls: ['./friend-friends.component.css']
 })
-export class FriendsComponent implements OnInit {
+export class FriendFriendsComponent implements OnInit {
 
   friend_list: Array<FriendDto> = [];
-  @Input() profile = new ProfileDto();
-  
-  constructor(private service: AccountService,private notifier:NotifierService,private router:Router) { 
+  mine_profile = new ProfileDto();
+  friend:string='';
+
+  constructor(private service: AccountService,private notifier:NotifierService,private router:Router,private route:ActivatedRoute) { 
     service.onChanged.subscribe((res)=>this.ngOnInit());
   }
 
   ngOnInit() {
-    this.service.getFriends(localStorage.getItem('token') as string).subscribe((res: ResultCollectionDto) => {
+    this.friend = this.route.snapshot.paramMap.get('friend') as string;
+
+    this.service.getProfile(localStorage.getItem("token") as string).subscribe((res:ResultCollectionDto)=>{
+      if(res.isSuccess){
+        this.mine_profile=res.data[0];
+      }
+    })
+
+    this.service.getFriendsUsername(this.friend).subscribe((res: ResultCollectionDto) => {
       if (res.isSuccess) {
         //this.service.onChanged.emit(true);
         this.friend_list = res.data

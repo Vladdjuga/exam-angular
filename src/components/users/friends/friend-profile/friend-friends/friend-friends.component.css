@@ -35,7 +35,7 @@
 
 .card {
   background-color: #24181856;
-  height: 30vh;
+  height: 25vh;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -50,14 +50,14 @@
 }
 
 .card__image {
-  width: 10vh !important;
-  height: 10vh !important;
-  object-fit: cover;
+  width: 10vh;
+  height: 10vh;
+  object-fit: contain;
   border-radius: 50%;
   border: 5px solid #272133;
+  margin-top: 20px;
   box-shadow: 0 10px 50px rgb(235, 25, 25);
   cursor: pointer;
-  margin-top: 15px;
 }
 
 

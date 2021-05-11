@@ -1,0 +1,28 @@
+<div class="text-light">
+
+  <div class="panel grad-blue row">
+    
+    <div class="col-lg-6 row">
+      
+      <div class="col-lg-6">
+        <img class="pic-md img-circle" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="...">
+      </div> 
+      <div class="name col-lg-6">
+        <small>{{profile.username}}</small>
+        <br>
+        <small class="small-text">{{profile.alias}}</small>
+      </div>
+    </div>
+  </div>
+ 
+  <mat-tab-group>
+    <mat-tab label="Posts">
+      <app-friend-posts [profile]="profile"></app-friend-posts>
+    </mat-tab>
+    <mat-tab label="Friends">
+      <app-friend-friends [profile]="profile"></app-friend-friends>
+    </mat-tab>
+  </mat-tab-group>
+
+
+</div>

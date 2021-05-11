@@ -25,6 +25,9 @@ login(model:LoginDto):Observable<ResultLoginDto>{
 getProfile(token:string):Observable<ResultCollectionDto>{
   return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Account/profile/'+token);
 }
+getProfileUsername(username:string):Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Account/profile_username/'+username);
+}
 uploadPhoto(id:string,file: FormData):Observable<ResultDto>{
   this.headers.append('Content-Type',"multipart/form-data");
   return this.http.post<ResultDto>('https://localhost:44395/api/Account/uploadPhoto/'+id,file,{headers:this.headers});
@@ -44,6 +47,9 @@ getInvites(token:string):Observable<ResultCollectionDto>{
 getFriends(token:string):Observable<ResultCollectionDto>{
   return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/friends/'+token);
 }
+getFriendsUsername(username:string):Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/friendsusername/'+username);
+}
 addChat(token:string,friend:string):Observable<ResultDto>{
   return this.http.get<ResultDto>('https://localhost:44395/api/Chat/add-chat/'+token+'&'+friend);
 }
@@ -53,6 +59,6 @@ getChats(token:string):Observable<ResultCollectionDto>{
 sendMessage(token:string,id:string,model:MessageDto):Observable<ResultDto>{
   return this.http.post<ResultDto>(`https://localhost:44395/api/Chat/add-message/${token}&${id}/`,model);
 }
-
+//friendsusername
 
 }
