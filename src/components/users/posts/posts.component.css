@@ -6,7 +6,7 @@
 }
 
 .img-circle{
-    height: 40%;
+    width: 40%;
     display: flex;
 }
 .margin-top{
@@ -65,4 +65,7 @@
 }
 .text-alignment{
     text-align: right;
+}
+.menu{
+    float: left;
 }

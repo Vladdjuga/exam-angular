@@ -1,3 +1,19 @@
 .router-outlet-mg{
-    margin:0 23%
+    margin:0 23%;
+    padding:1%;
+}
+@media(min-width: 0px){ 
+    .router-outlet-mg{
+        margin:0 0
+    }
+}
+@media(min-width: 700px){ 
+    .router-outlet-mg{
+        margin:0 11%
+    }
+}
+@media(min-width: 1300px){ 
+    .router-outlet-mg{
+        margin:0 23%
+    }
 }

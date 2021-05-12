@@ -17,6 +17,9 @@ export class PostService {
   get(token:string):Observable<ResultCollectionDto>{
     return this.http.get<ResultCollectionDto>("https://localhost:44395/api/Post/getuserposts/"+token);
   }
+  remove(id:number):Observable<ResultDto>{
+    return this.http.get<ResultDto>("https://localhost:44395/api/Post/remove/"+id);
+  }
   getUsername(username:string):Observable<ResultCollectionDto>{
     return this.http.get<ResultCollectionDto>("https://localhost:44395/api/Post/getfriendsposts/"+username);
   }

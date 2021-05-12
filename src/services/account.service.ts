@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RegisterDto,LoginDto } from 'src/models/accountDtos';
+import { RegisterDto,LoginDto, EditProfileDto } from 'src/models/accountDtos';
 import { ResultCollectionDto, ResultDto,ResultLoginDto } from 'src/models/apiResults/apiResultDto';
 import { InviteDto } from 'src/models/inviteDto';
 import { MessageDto } from 'src/models/messageDto';
@@ -18,6 +18,9 @@ headers:HttpHeaders=new HttpHeaders();
 
 register(model:RegisterDto):Observable<ResultLoginDto>{
   return this.http.post<ResultLoginDto>('https://localhost:44395/api/Account/register',model);
+}
+editProfile(model:EditProfileDto,token:string):Observable<ResultLoginDto>{
+  return this.http.post<ResultLoginDto>('https://localhost:44395/api/Account/edit/'+token,model);
 }
 login(model:LoginDto):Observable<ResultLoginDto>{
   return this.http.post<ResultLoginDto>('https://localhost:44395/api/Account/login',model);

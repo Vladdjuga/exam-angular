@@ -13,17 +13,26 @@
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
                   <div class="mx-auto" style="width: 140px;">
-                    <div class="d-flex justify-content-center align-items-center rounded dbg" style="height: 140px; background-color: rgb(233, 236, 239); border-radius: 50%;">
-                      <span style="color: rgb(255, 255, 255); font: bold 8pt Arial;">140x140</span>
+                    <div class="d-flex justify-content-center align-items-center rounded dbg" style="height: 140px; background-color: rgb(233, 236, 239); border-radius: 50%;
+                    background-image: url(https://localhost:44395/Images/UsersIcons/{{profile.image}});
+                    ">
                     </div>
                   </div>
                 </div>
                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                   <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                    <p class="mb-0">@johnny.s</p>
                     <div class="mt-2">
-                      <button mat-flat-button color="warn">Change Photo</button>
+                      <mat-form-field>
+                        <ngx-mat-file-input [(ngModel)]="files_" type="file" name="file" formControlName="requiredfile" placeholder="Upload your profile picture" valuePlaceholder="No file selected" (change)="photoChange($any(target($event).files))"></ngx-mat-file-input>
+                        <mat-icon matSuffix>folder</mat-icon>
+                        <mat-error *ngIf="formDoc.hasError('required')">
+                          Please select a file
+                        </mat-error>
+                        <mat-error *ngIf="formDoc.hasError('maxContentSize')">
+                          The total size must not exceed {{formDoc.get('requiredfile')?.getError('maxContentSize').maxSize | byteFormat}} ({{formDoc.get('requiredfile')?.getError('maxContentSize').actualSize
+                          | byteFormat}}).
+                        </mat-error>
+                      </mat-form-field>
                     </div>
                   </div>
                 </div>
@@ -39,7 +48,7 @@
                         <div class="example-container">
                           <mat-form-field class="example-full-width">
                             <mat-label>Enter your username</mat-label>
-                            <input [(ngModel)]="user.username" type="text" matInput placeholder="Username" [formControl]="username" required>
+                            <input [(ngModel)]="res_profile.username" type="text" matInput placeholder="Username" [formControl]="username" required>
                             <mat-error *ngIf="username.invalid">{{getErrorMessage2()}}</mat-error>
                           </mat-form-field>
                         </div>
@@ -47,49 +56,23 @@
                       <div class="col">
                         <mat-form-field class="example-full-width">
                           <mat-label>Enter your alias</mat-label>
-                          <input [(ngModel)]="user.alias" type="text" matInput placeholder="Alias" [formControl]="username" required>
-                          <mat-error *ngIf="username.invalid">{{getErrorMessage2()}}</mat-error>
+                          <input [(ngModel)]="res_profile.alias" name="alias" type="text" matInput placeholder="Alias" [formControl]="alias" required>
+                          <mat-error *ngIf="alias.invalid">{{getErrorMessage2()}}</mat-error>
                         </mat-form-field>
                       </div>
                     </div>
                     <div class="example-container">
                       <mat-form-field class="example-full-width">
                         <mat-label>Enter your email</mat-label>
-                        <input [(ngModel)]="user.email" type="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+                        <input [(ngModel)]="res_profile.email" type="email" matInput placeholder="pat@example.com" [formControl]="email" required>
                         <mat-error *ngIf="email.invalid">{{getErrorMessage1()}}</mat-error>
                       </mat-form-field>
                     </div>
-                    <div class="example-container">
-                      <mat-form-field class="example-full-width">
-                      <mat-label>Enter your password</mat-label>
-                      <input [(ngModel)]="user.password" type="password" matInput placeholder="***" [formControl]="password" required>
-                      <mat-error *ngIf="password.invalid">{{getErrorMessage3()}}</mat-error>
-                    </mat-form-field>
-                  </div>
-                    
-                    <div class="example-container">
-                      <mat-form-field class="example-full-width">
-                      <mat-label>Re-enter your password</mat-label>
-                      <input [(ngModel)]="re_enter_pass" type="password" matInput placeholder="***" [formControl]="password" required>
-                      <mat-error *ngIf="password.invalid">{{getErrorMessage3()}}</mat-error>
-                    </mat-form-field>
-                  </div>
-                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                      At least 8 characters and 1 digit
-                    </small>
-                    <mat-form-field class="example-full-width" class="example-full-width">
-                      <mat-label>Birthday</mat-label>
-                      <input [(ngModel)]="user.birth" (dateInput)="addEvent('input', $event)" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker touchUi #picker></mat-datepicker>
-                    </mat-form-field>
-                    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                      Enter your birthday
-                    </small>
+                  
 
                     <div class="row">
                       <div class="col d-flex justify-content-end">
-                        <button mat-flat-button color="warn">Save Change</button>
+                        <button mdbBtn color="red" [block]="true" class="my-4" type="submit" (click)="saveChanges()">Save changes</button>
                       </div>
                     </div>
                   </form>

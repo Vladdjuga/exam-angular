@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
 
 .container {
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  grid-gap: 50px;
   justify-content: center;
   align-items: center;
   height: 40%;

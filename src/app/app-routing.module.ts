@@ -62,7 +62,7 @@ const routes: Routes = [
     component:EditProfileComponent
   },
   {
-    path:"home",
+    path:"",
     component:HomeComponent
   },
 ];

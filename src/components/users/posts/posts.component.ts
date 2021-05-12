@@ -30,5 +30,13 @@ export class PostsComponent implements OnInit {
       }
     })
   }
+  remove(id:number){
+    this.service.remove(id).subscribe((res:ResultDto)=>{
+      if(res.isSuccess){
+        this.notifier.notify('success',res.message);
+        this.service.onChanged.emit(true);
+      }
+    })
+  }
 
 }

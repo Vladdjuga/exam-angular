@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { FriendDto, ProfileDto } from 'src/models/accountDtos';
 import { ResultCollectionDto, ResultDto } from 'src/models/apiResults/apiResultDto';
@@ -18,7 +19,7 @@ export class FindFriendsComponent implements OnInit {
   friend_list: Array<FriendDto> = [];
   profile = new ProfileDto();
 
-  constructor(private service: AccountService,private notify:NotifierService) { }
+  constructor(private service: AccountService,private notify:NotifierService,private router:Router) { }
 
   ngOnInit() {
     this.service.getProfile(localStorage.getItem("token") as string).subscribe((res: ResultCollectionDto) => {
@@ -48,6 +49,14 @@ export class FindFriendsComponent implements OnInit {
         this.notify.notify('error',res.message);
       }
     });
+  }
+  addChat(friend:string){
+    this.service.addChat(localStorage.getItem('token') as string,friend).subscribe((res:ResultDto)=>{
+      if(res.isSuccess){
+        this.notify.notify('success',res.message);
+        this.router.navigate(['chat']);
+      }
+    })
   }
 
 }

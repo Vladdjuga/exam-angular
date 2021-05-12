@@ -6,7 +6,7 @@
   <links>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a [routerLink]="['/home']" class="nav-link waves-light" mdbWavesEffect>Home</a>
+        <a [routerLink]="['']" class="nav-link waves-light" mdbWavesEffect>Home</a>
       </li>
       <li class="nav-item" *ngIf="activate.canActivate()">
         <a [routerLink]="['find-friends']" class="nav-link waves-light" mdbWavesEffect>Search friends</a>
@@ -26,6 +26,7 @@
       <li class="nav-item dropdown" *ngIf="activate.canActivate()" dropdown>
         <a [routerLink]="['/profile']" dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light">
           <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span>
+          <img/>
         </a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
