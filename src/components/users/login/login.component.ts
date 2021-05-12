@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 import { LoginDto } from 'src/models/accountDtos';
 import { ResultDto, ResultLoginDto } from 'src/models/apiResults/apiResultDto';
 import { AccountService } from 'src/services/account.service';
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   loginDto=new LoginDto();
 
-  constructor(private service:AccountService,private router:Router) { }
+  constructor(private service:AccountService,private router:Router,private notifier:NotifierService) { }
 
   username = new FormControl('', [Validators.required, Validators.maxLength(20), Validators.minLength(3)]);
   password = new FormControl('', [Validators.required, Validators.maxLength(18), Validators.minLength(8)]);
@@ -41,6 +42,9 @@ export class LoginComponent implements OnInit {
       if(res.isSuccess){
         localStorage.setItem("token",res.token);
         this.router.navigate(["/profile"]);
+      }
+      else{
+        this.notifier.notify('error',"Wrong password or username!")
       }
     })
   }

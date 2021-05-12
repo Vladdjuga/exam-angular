@@ -50,3 +50,8 @@ body::-webkit-scrollbar-thumb
     background: linear-gradient(164deg, rgba(117,0,0,1) 33%, rgba(210,23,23,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#750000",endColorstr="#d21717",GradientType=1);
 }
+.gray-nothave{
+    text-align: center;
+    color: gray;
+    padding-top: 5vh;
+}

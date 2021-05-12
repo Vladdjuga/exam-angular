@@ -4,8 +4,12 @@
     
     <div class="col-lg-6 row">
       
-      <div class="col-lg-6">
-        <img class="pic-md img-circle" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="...">
+      <div class="col-lg-3">
+        <div *ngIf="profile.role!='Admin'" style="background-image: url(https://localhost:44395/Images/UsersIcons/{{profile.image}});" class="pic-md">
+        </div>
+        <div *ngIf="profile.role=='Admin'" style="background-image: url(https://localhost:44395/Images/UsersIcons/{{profile.image}});" class="pic-md admin">
+        </div>
+        <!-- <img class="pic-md img-circle" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="..."> -->
       </div>
       
       <!--<form [formGroup]="formDoc">
@@ -26,7 +30,7 @@
         <button mdbBtn color="red" [block]="true" class="my-4" type="submit" (click)="changePic()">Submit</button>
       </form>-->
       
-      <div class="name col-lg-6">
+      <div class="name col-lg-3">
         <small>{{profile.username}}</small>
         <br>
         <small class="small-text">{{profile.alias}}</small>
@@ -43,7 +47,12 @@
       <app-friends [profile]="profile"></app-friends>
     </mat-tab>
     <mat-tab label="Invites">
-      <mat-list class="container">
+      <div *ngIf="invites.length<=0">
+          <p class="gray-nothave">
+            Seems that you dont have any invites
+          </p>
+      </div>
+      <mat-list  *ngIf="invites.length>0" class="container">
         <mat-list-item *ngFor="let invite of invites" class="panel">
           <img class="img-circle-sm mr-2" src="https://localhost:44395/Images/UsersIcons/{{invite.image}}" alt="...">
           {{invite.username}}

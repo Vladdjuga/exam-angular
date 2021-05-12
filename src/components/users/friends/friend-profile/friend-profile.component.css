@@ -1,12 +1,14 @@
      	  
     .pic-md
     {
-        object-fit: cover;
-        width:10vh;
-        height:10vh;
+        width:7vh;
+        height:7vh;
         border-radius: 50%;
+        background-size: cover;
     }
-    
+    .admin{
+        box-shadow: 0 10px 10px rgb(235, 25, 25);
+    }
     .panel
     {
         padding: 1% 5%;

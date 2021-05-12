@@ -11,55 +11,43 @@ import { LoginComponent } from 'src/components/users/login/login.component';
 import { ProfileComponent } from 'src/components/users/profile/profile.component';
 import { RegisterComponent } from 'src/components/users/register/register.component';
 import { IsLoggedGuard } from 'src/guards/islogged.guard';
+import { IsNotLoggedGuard } from 'src/guards/isnotLogged.guard';
 
 const routes: Routes = [
   {
-    path:"products",
-    children:[
-      {
-        path:"products",
-        component:ProductsComponent
-      }
-    ],
-    component:ProductsComponent
-  },
-  {
-    path:"categories",
-    children:[
-      {
-        path:"categories",
-        component:CategoriesComponent
-      }
-    ],
-    component:CategoriesComponent
-  },
-  {
     path:"login",
-    component:LoginComponent
+    component:LoginComponent,
+    canActivate:[IsNotLoggedGuard]
   },
   {
     path:"register",
-    component:RegisterComponent
+    component:RegisterComponent,
+    canActivate:[IsNotLoggedGuard]
   },
   {
     path:"find-friends",
-    component:FindFriendsComponent
+    component:FindFriendsComponent,
+    canActivate:[IsLoggedGuard]
   },
   {
     path:"friend-profile/:friend",
-    component:FriendProfileComponent
+    component:FriendProfileComponent,
+    canActivate:[IsLoggedGuard]
   },
   {
     path:"chat",
-    component:ChatComponent
+    component:ChatComponent,
+    canActivate:[IsLoggedGuard]
   },
   {
     path:"profile",
     component:ProfileComponent,
+    canActivate:[IsLoggedGuard]
   },
   {
     path:"edit-profile",
-    component:EditProfileComponent
+    component:EditProfileComponent,
+    canActivate:[IsLoggedGuard]
   },
   {
     path:"",

@@ -83,6 +83,7 @@ export class ChatComponent implements OnInit {
     return this.datepipe.transform(new Date(date), 'hh:mm');
   }
   sendMessage() {
+    if(this.message.text!=''){
     this.service.sendMessage(localStorage.getItem('token') as string, this.current_chat.id.toString(), this.message).subscribe((res: ResultDto) => {
       //console.log(res)
       if (res.isSuccess) {
@@ -92,7 +93,7 @@ export class ChatComponent implements OnInit {
       else {
         console.log(res)
       }
-    })
+    })}
   }
 
 }

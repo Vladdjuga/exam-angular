@@ -73,6 +73,7 @@ import { HomeComponent } from 'src/components/home/home.component';
 import { FriendProfileComponent } from 'src/components/users/friends/friend-profile/friend-profile.component';
 import { FriendPostsComponent } from 'src/components/users/friends/friend-profile/friend-posts/friend-posts.component';
 import { FriendFriendsComponent } from 'src/components/users/friends/friend-profile/friend-friends/friend-friends.component';
+import { IsNotLoggedGuard } from 'src/guards/isnotLogged.guard';
 
 @NgModule({
   declarations: [
@@ -157,7 +158,8 @@ import { FriendFriendsComponent } from 'src/components/users/friends/friend-prof
       useClass: TokenInterceptor,
       multi: true
     },
-    DatePipe
+    DatePipe,
+    IsNotLoggedGuard
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

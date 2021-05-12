@@ -28,7 +28,7 @@
     "@aspnet/signalr": "^1.0.27",
     "@covalent/core": "^3.1.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "@microsoft/signalr": "^5.0.5",
+    "@microsoft/signalr": "^5.0.6",
     "@nebular/theme": "^7.0.0",
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "@types/chart.js": "^2.9.32",

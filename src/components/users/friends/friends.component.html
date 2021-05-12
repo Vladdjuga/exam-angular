@@ -1,4 +1,10 @@
-<div class="container row">
+<div *ngIf="friend_list.length<=0">
+  <p class="gray-nothave">
+    Seems that you dont have any friends. 
+    HA!
+  </p>
+</div>
+<div  *ngIf="friend_list.length>0" class="container row">
   <div *ngFor="let friend of friend_list" class="card col-lg-4 col-md-6 col-sm-12">
     <img (click)="redirectProfileFriend(friend.username)" src="https://localhost:44395/Images/UsersIcons/{{friend.image}}" class="card__image">
     <p class="card__name">{{friend.username}}</p>

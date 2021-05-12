@@ -78,6 +78,9 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/login']);
           this.uploadPhoto(this.files_, this.id);
         }
+        else{
+          this.notifier.notify('error', res.message);
+        }
       })
     }
     else {

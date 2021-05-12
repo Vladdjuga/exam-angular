@@ -5,7 +5,10 @@
     <div class="col-lg-6 row">
       
       <div class="col-lg-6">
-        <img class="pic-md img-circle" src="https://localhost:44395/Images/UsersIcons/{{profile.image}}" alt="...">
+        <div *ngIf="profile.role!='Admin'" style="background-image: url(https://localhost:44395/Images/UsersIcons/{{profile.image}});" class="pic-md">
+        </div>
+        <div *ngIf="profile.role=='Admin'" style="background-image: url(https://localhost:44395/Images/UsersIcons/{{profile.image}});" class="pic-md admin">
+        </div>
       </div> 
       <div class="name col-lg-6">
         <small>{{profile.username}}</small>

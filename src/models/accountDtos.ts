@@ -38,6 +38,7 @@ export class ProfileDto{
     alias:string='';
     email:string='';
     image:string='';
+    role:string='';
     birth:Date=new Date();
 }
 export class FriendDto{
