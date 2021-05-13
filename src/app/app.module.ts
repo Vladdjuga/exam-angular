@@ -74,6 +74,9 @@ import { FriendProfileComponent } from 'src/components/users/friends/friend-prof
 import { FriendPostsComponent } from 'src/components/users/friends/friend-profile/friend-posts/friend-posts.component';
 import { FriendFriendsComponent } from 'src/components/users/friends/friend-profile/friend-friends/friend-friends.component';
 import { IsNotLoggedGuard } from 'src/guards/isnotLogged.guard';
+import { IsAdminGuard } from 'src/guards/isAdmin.guard';
+import { AdminHomeComponent } from 'src/components/admin/admin-home/admin-home.component';
+import { UsersListComponent } from 'src/components/admin/admin-home/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +100,9 @@ import { IsNotLoggedGuard } from 'src/guards/isnotLogged.guard';
     HomeComponent,
     FriendProfileComponent,
     FriendPostsComponent,
-    FriendFriendsComponent
+    FriendFriendsComponent,
+    AdminHomeComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
@@ -159,7 +164,8 @@ import { IsNotLoggedGuard } from 'src/guards/isnotLogged.guard';
       multi: true
     },
     DatePipe,
-    IsNotLoggedGuard
+    IsNotLoggedGuard,
+    IsAdminGuard
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],

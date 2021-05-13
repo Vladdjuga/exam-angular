@@ -24,10 +24,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 body,html{
     height: 100% !important;
-    background: rgb(28, 28, 28);
-    background: -moz-linear-gradient(164deg, rgba(28,28,28,1) 33%, rgba(50,21,21,1) 100%);
-    background: -webkit-linear-gradient(164deg, rgba(28,28,28,1) 33%, rgba(50,21,21,1) 100%);
-    background: linear-gradient(164deg, rgba(28,28,28,1) 33%, rgba(50,21,21,1) 100%);
+    background-attachment: fixed;
+    background: rgb(48, 18, 18);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c1c1c",endColorstr="#321515",GradientType=1);
 }
 body::-webkit-scrollbar-track

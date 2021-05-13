@@ -1,0 +1,19 @@
+<mat-form-field class="example-full-width mt-5">
+  <input (change)="changedText()" [(ngModel)]="friends_string" class="text-light" type="text" matInput placeholder="Serch friends..." [formControl]="friends">
+</mat-form-field>
+
+<div>
+<div class="container">
+  <div *ngFor="let friend of friend_list" class="card">
+    <img src="https://localhost:44395/Images/UsersIcons/{{friend.image}}" class="card__image">
+    <p class="card__name">{{friend.username}}</p>
+    <div class="grid-container">
+
+    </div>
+
+    <button (click)="ban(friend.username)" class="btn draw-border">BAN</button>
+
+  </div>
+</div>
+
+</div>

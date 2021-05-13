@@ -53,6 +53,9 @@ getFriends(token:string):Observable<ResultCollectionDto>{
 getFriendsUsername(username:string):Observable<ResultCollectionDto>{
   return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/friendsusername/'+username);
 }
+getAllFriends():Observable<ResultCollectionDto>{
+  return this.http.get<ResultCollectionDto>('https://localhost:44395/api/Friend/all-friends/');
+}
 addChat(token:string,friend:string):Observable<ResultDto>{
   return this.http.get<ResultDto>('https://localhost:44395/api/Chat/add-chat/'+token+'&'+friend);
 }
@@ -61,6 +64,22 @@ getChats(token:string):Observable<ResultCollectionDto>{
 }
 sendMessage(token:string,id:string,model:MessageDto):Observable<ResultDto>{
   return this.http.post<ResultDto>(`https://localhost:44395/api/Chat/add-message/${token}&${id}/`,model);
+}
+ban(username:string):Observable<ResultDto>{
+  return this.http.get<ResultDto>(`https://localhost:44395/api/Admin/ban/${username}`);
+}
+
+isAdmin(){
+  let token = localStorage.getItem('token') as string;
+  const jwtData = token.split('.')[1];
+  const decodedJwtJsonData = window.atob(jwtData);
+  const decodedJwtData = JSON.parse(decodedJwtJsonData);
+  if(decodedJwtData.roles != "Admin"){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
 //friendsusername
 

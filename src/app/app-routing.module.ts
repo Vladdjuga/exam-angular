@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminHomeComponent } from 'src/components/admin/admin-home/admin-home.component';
+import { UsersListComponent } from 'src/components/admin/admin-home/users-list/users-list.component';
 import { CategoriesComponent } from 'src/components/categories/categories/categories.component';
 import { ChatComponent } from 'src/components/chat/chat.component';
 import { HomeComponent } from 'src/components/home/home.component';
@@ -10,6 +12,7 @@ import { FriendProfileComponent } from 'src/components/users/friends/friend-prof
 import { LoginComponent } from 'src/components/users/login/login.component';
 import { ProfileComponent } from 'src/components/users/profile/profile.component';
 import { RegisterComponent } from 'src/components/users/register/register.component';
+import { IsAdminGuard } from 'src/guards/isAdmin.guard';
 import { IsLoggedGuard } from 'src/guards/islogged.guard';
 import { IsNotLoggedGuard } from 'src/guards/isnotLogged.guard';
 
@@ -48,6 +51,17 @@ const routes: Routes = [
     path:"edit-profile",
     component:EditProfileComponent,
     canActivate:[IsLoggedGuard]
+  },
+  {
+    path: 'dashboard',
+    component: AdminHomeComponent,
+    canActivate: [IsAdminGuard],
+    children:[
+      {
+        path:'get-users',
+        component:UsersListComponent,
+      }
+    ]
   },
   {
     path:"",
